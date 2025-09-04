@@ -1,0 +1,4 @@
+n=int(input())
+ls=list(map(int, input().split()))
+ls2=sorted(ls)
+print(max(ls2[0]*ls2[1],ls2[-1]*ls2[-2]))
