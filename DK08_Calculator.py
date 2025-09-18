@@ -1,15 +1,14 @@
-ip=input().split()
-#vd: 1 + 1 
-#lam tron 2 stp
-try:
-    if ip[2]==0: print("Math Error")
-    if ip[1]=="+":
-        print("{:.2f}".format(int(ip[0])+int(ip[2])))
-    elif ip[1]=="-":
-        print("{:.2f}".format(int(ip[0])-int(ip[2])))
-    elif ip[1]=="*":
-        print("{:.2f}".format(int(ip[0])*int(ip[2])))
+a,op,c=list(map(str,input().split()))
+a,c=float(a),float(c)
+if op=="+":
+    print("{:.2f}".format(a+c))
+elif op=="-":
+    print("{:.2f}".format(a-c))
+elif op=="*":
+    print("{:.2f}".format(a*c))
+elif op=="/":
+    if c==0 or abs(a)>10000 or abs(c)>10000:
+        print("Math Error")
     else:
-        print("{:.2f}".format(int(ip[0])/int(ip[2])))
-except:
-    print("Math Error")
+        print("{:.2f}".format(a/c))
+        

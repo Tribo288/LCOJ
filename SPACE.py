@@ -1,15 +1,13 @@
 n=int(input())
 op=[]
 for i in range(n):
-    st=input()
-    c=0
-    for x in range(1,len(st)):
-        if st[x]==" " and (st[x+1]!=" " or st[x-1]!=" "):
-            c+=1
-    op.append(c)
-print(*[op])
-
-#__ab___
-#_ab
-#a_b
-#len=7
+    s=input()
+    count=0
+    if s[-1] ==" ":
+            count+=1    
+    for i in range(0,len(s)-1):
+        if s[i]==" " and s[i+1] != " ":
+            count+=1
+    op.append(count)
+for i in op:
+    print(i)
