@@ -1,5 +1,5 @@
 t=int(input())
-mins=t/60
-hour=mins/60
-sec=t-60*mins-hour*60*60
+hours=t//60//60
+mins= 
+secs= t
 print(f"{hour}:{mins}:{sec}")

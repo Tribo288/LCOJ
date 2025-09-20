@@ -1,13 +1,10 @@
 T=int(input())
 op=[]
 def cal(n):
-    value=1
-    for i in range(n):
-        value=1/(1+value)
-    return value
+    return sum(i for i in range(1,n+1))
 if __name__=='__main__':
     for i in range(T):
         n=int(input())
-        op.append(("{:.5f}".format(cal(n))))
+        op.append(sum(1/cal(i) for i in range(1,n+1)))
     for i in op:
-        print(i)
+        print(op)
