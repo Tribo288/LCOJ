@@ -1,12 +1,15 @@
-def prime(n):
-    if n<2:
-        return False
-    else:
-        for i in range(2,int(n**0.5)+1):
-            if n%i==0: return False
-    return True
-x=int(input(),)
-if x<10**6:
-    for i in range(2,x+1):
-        if prime(i):
-            print(i,end=" ")
+def prime_list(n):
+    
+    is_prime=[True]*(n+1)
+    is_prime[0]=is_prime[1]=False
+    
+    for i in range(2,int(n**0.5)+1):
+        if is_prime[i]:
+            for x in range(i*i,n+1,i):
+                is_prime[x]=False
+                
+    primes=[i for i,val in enumerate(is_prime) if val]
+    return primes
+if __name__=="__main__":
+    n=int(input())
+    print(*prime_list(n))
