@@ -1,10 +1,17 @@
-T=int(input())
-op=[]
-def cal(n):
-    return sum(i for i in range(1,n+1))
 if __name__=='__main__':
+    T=int(input())
+    op=[]
+    
+    #1=1 #2=1+2  #3=3+3 
     for i in range(T):
         n=int(input())
-        op.append(sum(1/cal(i) for i in range(1,n+1)))
+        
+        ar=[0.0]*(n+1)
+        ar[0]=1
+        ar[1]=1
+        for i in range(2,n+1):
+            ar[i]=ar[i-1]+i
+        
+        op.append(sum(1/(n)for n in ar))
     for i in op:
-        print(op)
+        print("{:.8f}".format(i))
